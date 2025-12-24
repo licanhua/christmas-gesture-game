@@ -1,0 +1,14 @@
+Build a Festive Web Game with Three.js and MediaPipe Gestures
+Create an interactive holiday-themed web game using Three.js for 3D rendering and MediaPipe for gesture-based controls.
+
+# Scene Setup: Load christmas_pack_free.glb, which features a cozy yard adorned with Christmas decorations.
+
+# Gesture Controls: Select the most reliable hand gestures to control:
+- Left Rotation
+- Right Rotation
+- Zoom In
+- Zoom Out
+
+# Atmosphere:
+- Add falling snowflakes in front of the camera to enhance the Christmas ambiance.
+- Play "We Wish You a Merry Christmas (Swirrel remix)" as background music for a festive touch.

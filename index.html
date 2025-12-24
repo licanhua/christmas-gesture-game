@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festive Christmas Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #0a1628, #1a3a52);
+        }
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        #canvas3d {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #videoElement {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 200px;
+            height: 150px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            transform: scaleX(-1);
+            z-index: 10;
+        }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 10;
+            max-width: 250px;
+        }
+        h2 {
+            margin-bottom: 10px;
+            color: #d32f2f;
+            font-size: 18px;
+        }
+        .gesture-info {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 8px;
+            background: #e8f5e9;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #2e7d32;
+        }
+        button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #b71c1c;
+        }
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            z-index: 5;
+        }
+        #merryChristmas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 72px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 20px #ff0000, 0 0 40px #00ff00, 0 0 60px #0000ff;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            font-family: 'Arial Black', sans-serif;
+            white-space: nowrap;
+        }
+        #merryChristmas.show {
+            animation: merryChristmasAnim 3s ease-out;
+        }
+        @keyframes merryChristmasAnim {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5) rotate(-10deg);
+            }
+            20% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.2) rotate(5deg);
+            }
+            40% {
+                transform: translate(-50%, -50%) scale(1) rotate(-2deg);
+            }
+            60% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(2deg);
+            }
+            80% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas3d"></canvas>
+        <video id="videoElement" autoplay playsinline></video>
+        <div id="controls">
+            <h2>🎄 Christmas Game 🎄</h2>
+            <div class="gesture-info"><strong>� Hand on Left:</strong> Zoom In</div>
+            <div class="gesture-info"><strong>👉 Hand on Right:</strong> Zoom Out</div>
+            <div class="gesture-info"><strong>✌️ Victory:</strong> Merry Christmas!</div>
+            <div class="gesture-info"><strong>✊ Fist:</strong> Fireworks! 🎆</div>
+            <div class="status" id="status">Initializing...</div>
+        </div>
+        <div id="merryChristmas">Merry Christmas! 🎄</div>
+        <div id="loading">Loading Christmas Scene...</div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="module" src="game.js"></script>
+</body>
+</html>
