@@ -2,6 +2,15 @@
 
 An interactive holiday-themed web game using Three.js for 3D rendering and MediaPipe for gesture-based controls.
 
+**🎮 [Live Demo](https://licanhua.github.io/christmas-gesture-game/)**
+
+## About This Project
+
+This entire project was created by **GitHub Copilot** through an interactive AI-assisted development process:
+- Started with the initial requirements in [Feature.txt](Feature.txt)
+- All AI conversations and development iterations are logged in [chat.md](chat.md)
+- The complete development journey showcases AI-powered coding from concept to deployment
+
 ## Features
 
 - **3D Christmas Scene**: Loads `christmas_pack_free.glb` with a cozy yard and Christmas decorations
